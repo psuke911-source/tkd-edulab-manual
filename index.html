@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TKD Edu-Lab 活用マニュアル</title>
+    <style>
+        :root {
+            --primary-color: #04101e;
+            --accent-color: #2b6cb0;
+            --bg-color: #f7fafc;
+            --card-bg: #ffffff;
+            --text-color: #2d3748;
+            --border-color: #e2e8f0;
+            --highlight-bg: #ebf8ff;
+        }
+        body {
+            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Meiryo', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.8;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: linear-gradient(135deg, #04101e 0%, #1a365d 100%);
+            color: #ffffff;
+            padding: 50px 20px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+        header h1 {
+            margin: 0 0 10px 0;
+            font-size: 2.4rem;
+            letter-spacing: 0.05em;
+        }
+        header p {
+            margin: 0;
+            font-size: 1.15rem;
+            color: #cbd5e0;
+        }
+        .container {
+            max-width: 950px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            padding: 35px;
+            margin-bottom: 35px;
+            border-left: 6px solid var(--accent-color);
+        }
+        h2 {
+            color: var(--primary-color);
+            font-size: 1.6rem;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 12px;
+            margin-top: 0;
+        }
+        h3 {
+            color: var(--accent-color);
+            font-size: 1.25rem;
+            margin-top: 25px;
+            border-left: 4px solid var(--accent-color);
+            padding-left: 10px;
+        }
+        p, li {
+            font-size: 1.02rem;
+        }
+        ul, ol {
+            padding-left: 22px;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        .highlight-box {
+            background-color: var(--highlight-bg);
+            border: 1px solid #bee3f8;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        .screenshot-container {
+            margin: 20px 0;
+            text-align: center;
+        }
+        .screenshot-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+        /* 画像横並び用のスタイル */
+        .screenshot-row {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            align-items: flex-start;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+        .screenshot-col {
+            flex: 1;
+            min-width: 260px;
+            max-width: 48%;
+            text-align: center;
+            box-sizing: border-box;
+        }
+        .screenshot-col img {
+            width: 100%;
+            height: auto;
+            max-height: 400px;
+            object-fit: contain;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+        .img-caption {
+            font-size: 0.85rem;
+            color: #4a5568;
+            margin-top: 6px;
+        }
+        .step-list {
+            list-style: none;
+            padding: 0;
+        }
+        .step-list li {
+            position: relative;
+            padding-left: 40px;
+            margin-bottom: 15px;
+        }
+        .step-list li::before {
+            content: attr(data-step);
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 28px;
+            height: 28px;
+            background-color: var(--accent-color);
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 0.9rem;
+            line-height: 28px;
+            font-weight: bold;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid var(--border-color);
+            padding: 14px;
+            text-align: left;
+        }
+        th {
+            background-color: #edf2f7;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+        .badge {
+            display: inline-block;
+            background-color: #2b6cb0;
+            color: white;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: bold;
+        }
+        footer {
+            text-align: center;
+            padding: 35px;
+            color: #718096;
+            font-size: 0.95rem;
+            border-top: 1px solid var(--border-color);
+            background-color: #ffffff;
+            margin-top: 60px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>TKD Edu-Lab 活用マニュアル</h1>
+        <p>Teacher's Knowledge & Digital Education Lab - 総合利用ガイド</p>
+    </header>
+
+    <div class="container">
+        
+        <!-- Section 1 -->
+        <div class="card">
+            <h2>1. サイトの概要とアクセス方法</h2>
+            <p><strong>TKD Edu-Lab（Teacher's Knowledge & Digital Education Lab）</strong>は、先生方の知見とデジタルの力で教育現場を支える、総合的なICTサポート基地局です。</p>
+
+            <div class="highlight-box">
+                <ul>
+                    <li><strong>利用方法:</strong> URLを通じていつでも自由にアクセスしてご利用いただけます。ブラウザのブックマークやデスクトップへのショートカット作成を行っておくと、次回からスムーズにアクセスできて便利です。</li>
+                    <li><strong>注意事項（アカウント制限）:</strong> セキュリティおよび権限管理のため、アクセス・ご利用には指定ドメイン（<code>motobu.ed.jp</code>）のアカウントでのログインが必須となります。</li>
+                    <li><strong>緊急時の連絡:</strong> 授業中の急なトラブルなどでお急ぎの場合は、サイト上部にある <strong>[Google Chat]</strong> リンクから直接コンタクトを取ることができます。</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Section 2 -->
+        <div class="card" style="border-left-color: #319795;">
+            <h2>2. トップページ（ホーム）の構成とメニュー</h2>
+            <p>サイトを開くと、最新のお知らせや主要ページへの誘導カード、サイドメニューが分かりやすく配置されています。</p>
+            
+            <div class="screenshot-container">
+                <img src="Top.png" alt="TKD Edu-Lab トップページ画面">
+            </div>
+
+            <table>
+                <tr>
+                    <th>メニュー項目</th>
+                    <th>主な内容・できること</th>
+                </tr>
+                <tr>
+                    <td>🏠 ホーム</td>
+                    <td>最新のお知らせ、今月の訪問スケジュール更新情報、クイックリンク。</td>
+                </tr>
+                <tr>
+                    <td>🧰 ツール・DLライブラリ</td>
+                    <td>差し込み印刷、成績処理、ネームプレートなどの各種GASツールのダウンロード。</td>
+                </tr>
+                <tr>
+                    <td>📅 予定確認・訪問依頼</td>
+                    <td>支援員の巡回カレンダーの確認と、個別サポート・訪問の予約機能。</td>
+                </tr>
+                <tr>
+                    <td>📩 各種依頼・連絡窓口</td>
+                    <td>訪問依頼に加え、新規ツール作成やシステムの改修・相談窓口。</td>
+                </tr>
+                <tr>
+                    <td>📖 マニュアル・資料</td>
+                    <td>本サイトの使い方、各種ツールの初期設定手順、よくある質問など。</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Section 3 -->
+        <div class="card" style="border-left-color: #d69e2e;">
+            <h2>3. 予定確認・訪問依頼（訪問予定＆予約システム）</h2>
+            <p>支援員の巡回スケジュール確認と、Googleカレンダーの予約機能を活用した個別サポートの予約が行えます。</p>
+            
+            <h3>📅 訪問予定カレンダーの確認</h3>
+            <div class="screenshot-container">
+                <img src="Calendar.png" alt="訪問予定カレンダー画面">
+            </div>
+            <p>週間・月間表示で、各学校への訪問予定が一目で確認できます。</p>
+
+            <h3>📝 個別サポート予約の手順</h3>
+            
+            <!-- 予約画面の画像を横並びにするコンテナ -->
+            <div class="screenshot-row">
+                <div class="screenshot-col">
+                    <img src="Reserve1.png" alt="予約時間選択画面">
+                    <p class="img-caption">▲ 予約時間選択画面</p>
+                </div>
+                <div class="screenshot-col">
+                    <img src="Reserve2.png" alt="ご連絡先情報入力画面">
+                    <p class="img-caption">▲ 詳細入力画面</p>
+                </div>
+            </div>
+
+            <ol class="step-list">
+                <li data-step="1"><strong>予定確認・訪問依頼</strong>ページから予約カレンダーを開きます。</li>
+                <li data-step="2">カレンダー画面に表示される<span class="badge">予約可能な時間枠</span>（空欄部分）から、希望の日時をクリックします。</li>
+                <li data-step="3">詳細入力画面（ご連絡先情報）が開き、名前やメールアドレスは自動入力されます。</li>
+                <li data-step="4">「内容」欄に具体的なサポート希望内容を入力し、<strong>[予約]</strong> ボタンを押せば完了です。</li>
+            </ol>
+            <p style="font-size: 0.92rem; color: #4a5568; margin-top: 10px;">※予約完了後、自動確認メール（Gmail）が送信され、カレンダーのリマインダーも自動設定されます。</p>
+        </div>
+        
+        <!-- Section 4 -->
+        <div class="card" style="border-left-color: #e53e3e;">
+            <h2>4. 各種依頼・連絡窓口（クイック通知掲示板）</h2>
+            <p>授業中の急なトラブルや、システムの改修・新規作成の相談、連絡事項を行うための窓口です。</p>
+            
+            <h3>📋 クイック通知掲示板の使い方</h3>
+            <div class="screenshot-container">
+                <img src="Board.png" alt="クイック通知掲示板画面">
+            </div>
+            <ul>
+                <li><strong>1行ずつ入力:</strong> メモ紙の代わりに気軽にご活用いただけます。</li>
+                <li><strong>入力項目:</strong> <span class="badge">名前</span> <span class="badge">対応学校</span> <span class="badge">依頼区分</span> <span class="badge">依頼内容・症状など</span> をそれぞれ入力します。</li>
+                <li><strong>進捗の可視化:</strong> ICT支援員側で進捗状況の変更や色分けを行うため、対応状況が一目で分かります。</li>
+                <li><strong>自動通知:</strong> 入力と同時に自動的にICT支援員へ通知メール（Gmail）が送信され、確認漏れを防止します。</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 TKD Edu-Lab / Managed by ICT Supporter Takeda<br>※本サイトは対象校教職員専用ポータルです。学外・児童生徒へのURL共有はご遠慮ください。</p>
+    </footer>
+
+</body>
+</html>
